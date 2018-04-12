@@ -41,20 +41,23 @@ public class PigLatin extends JFrame{
 		public void actionPerformed(ActionEvent event) {
 			
 			StringBuilder string = new StringBuilder();
-		
-	
 			String content = textArea1.getText();
 			String edit = content.replaceAll("[\\W]", " ").toLowerCase();
-			
 			String[] token = edit.split(" ");
 			
-			//convert to Pig Latin
+			//convert to Pig Latin			
 			for(String word : token) {
-				
-				string.append(word.substring(1) + word.substring(0, 1))
+				if(word.startsWith("a")||word.startsWith("e")||word.startsWith("i")
+						||word.startsWith("o")||word.startsWith("u")||word.startsWith("hon")
+						||word.startsWith("hour")||word.startsWith("heir"))
+					string.append(word)
+					.append("ay")
+					.append(" ");
+				else
+					string.append(word.substring(1) + word.substring(0, 1))
 					 .append("ay")
 					 .append(" ");
-					}
+			}
 				
 			textArea2.setText(string.toString());
 		}
