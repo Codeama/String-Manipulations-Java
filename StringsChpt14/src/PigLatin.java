@@ -42,10 +42,11 @@ public class PigLatin extends JFrame{
 			
 			StringBuilder string = new StringBuilder();
 			String content = textArea1.getText();
-			String edit = content.replaceAll("[\\W]", " ").toLowerCase();
+			String edit = content.replaceAll("[\\W]", " ").replaceAll("\\s{2,}", " ").trim().toLowerCase();
 			String[] token = edit.split(" ");
 			
-			//convert to Pig Latin			
+			//convert to Pig Latin
+		
 			for(String word : token) {
 				if(word.startsWith("a")||word.startsWith("e")||word.startsWith("i")
 						||word.startsWith("o")||word.startsWith("u")||word.startsWith("hon")
@@ -58,7 +59,7 @@ public class PigLatin extends JFrame{
 					 .append("ay")
 					 .append(" ");
 			}
-				
+			
 			textArea2.setText(string.toString());
 		}
 	}
