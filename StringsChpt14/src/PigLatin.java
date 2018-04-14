@@ -35,7 +35,7 @@ public class PigLatin extends JFrame{
 		add(box);
 				
 	}
-	
+	//event handler
 	private class TextButtonHandler implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent event) {
@@ -46,7 +46,7 @@ public class PigLatin extends JFrame{
 			String[] token = edit.split(" ");
 			
 			//convert to Pig Latin
-		
+			//conditional statement for words starting with vowels and vowel sounds
 			for(String word : token) {
 				if(word.startsWith("a")||word.startsWith("e")||word.startsWith("i")
 						||word.startsWith("o")||word.startsWith("u")||word.startsWith("hon")
@@ -59,7 +59,6 @@ public class PigLatin extends JFrame{
 					 .append("ay")
 					 .append(" ");
 			}
-			
 			textArea2.setText(string.toString());
 		}
 	}
