@@ -1,4 +1,4 @@
-//Ex. 14. 7 Pig Latin 
+//Ex. 14. 7 Pig Latin
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.Box;
